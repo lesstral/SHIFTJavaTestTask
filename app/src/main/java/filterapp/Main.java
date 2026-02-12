@@ -19,8 +19,7 @@ public class Main {
         ArgumentsDTO dto = parser.call();
 
 
-        System.out.print(dto.inputFiles.toString() + " " + dto.outputPath +
-        " " + dto.prefix + " " + dto.statisticsFull + " " + dto.append + "\n");
+
 
         var fileService = new FileService();
         var statService = new StatisticsService();
