@@ -8,11 +8,30 @@
 - picocli, версия 4.7.6 [GitHub](https://github.com/remkop/picocli) - для парсинга аргументов командной строки
 ### Сборка и запуск
 #### Сборка
-- gradle clean build
+```
+gradle clean build
+```
 #### Запуск
-- java -jar build/libs/filterapp.jar [опции] файл1 файл2 ...
-- или
-- gradle run --args='[опции] файл1 файл2'
+```
+java -jar build/libs/filterapp.jar [опции] файл1 файл2 ...
+```
+или
+```
+gradle run --args='[опции] файл1 файл2'
+```
+#### Пример запуска:
+- Краткая статистика, вывод в текущую папку (значения по умолчанию)
+```
+gradle run --args="file1.txt file2.txt"
+```
+- Полная статистика с указанием пути вывода и префикса
+```
+gradle run --args="-f -o ./output -p result_ input/data1.txt input/data2.txt"
+```
+- Дописывание в существующие файлы + полная статистика
+```
+gradle run --args="--full --append input/*.txt"
+```
 ## Особенности реализации
 ### Парсинг аргументов командной строки
 - Аргументы -s и -f взаимоисключающие, по умолчанию подразумевается -s (краткая статистика)
